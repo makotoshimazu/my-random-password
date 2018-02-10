@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
   <h1>Random password generator</h1>
+  Generates your random password on your local environment.
   <div class="contents">
     <h2>Options</h2>
     <div class="control">
@@ -33,4 +35,14 @@
     </div>
   </div>
   <script src="app.js" async></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45531423-3"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-45531423-3');
+  </script>
 </body>

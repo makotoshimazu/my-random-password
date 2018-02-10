@@ -9,11 +9,12 @@
         },
         {
             "src": "key.svg",
-            "sizes": "256x256"
+            "sizes": "48x48 72x72 96x96 128x128 144x144"
         }
     ],
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#000",
+    "theme_color": "#666",
+    "background_color": "#FFF",
     "description": "Generate your random password."
 }
