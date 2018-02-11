@@ -1,6 +1,6 @@
 body {
-  font-family: Roboto, 'Noto Sans CJK JP', Arial, sans-serif;
-  color: #333;
+    font-family: Roboto, 'Noto Sans CJK JP', Arial, sans-serif;
+    color: #333;
 }
 
 h2 {
@@ -8,15 +8,35 @@ h2 {
     border-color: #333;
 }
 
-button {
-    border-color: #
+form {
+    margin-bottom: 24px;
+}
+
+.generate {
+    text-align: center;
+}
+
+.btn-main {
+    font-size: 1rem;
+    font-family: Roboto, 'Noto Sans CJK JP', Arial, sans-serif;
+    font-weight: 700;
+    color: #333;
+    background: #eee;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 3px 3px rgba(0, 0, 0, 0.19);
+}
+
+.btn-main:active {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
 .control {
     margin-bottom: 24px;
 }
 
-.passwords {
+.passwords > .password {
     font-family: 'Roboto Mono', 'Noto Sans Mono', Consolas, 'Courier New', Courier, Monaco, monospace;
     font-weight: 400;
 }

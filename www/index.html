@@ -8,8 +8,8 @@
   <h1>Random password generator</h1>
   Generates your random password on your machine.
   <div class="contents">
-    <h2>Options</h2>
-    <div class="control">
+    <section class="control">
+      <h2>Options</h2>
       <form id="form-params">
         <div class="card">
           Length:
@@ -28,11 +28,13 @@
           <label><input type="checkbox" name="symbols" value="true"> Symbols</label>
         </div>
       </form>
-      <button id="btn-generate">Generate</button>
-    </div>
-    <h2>Passwords</h2>
-    <div class="passwords">
-    </div>
+      <div class="generate">
+        <button id="btn-generate" class="btn-main">Generate</button>
+      </div>
+    </section>
+    <section class="passwords">
+      <h2>Passwords</h2>
+    </section>
   </div>
   <script src="app.js" async></script>
 
