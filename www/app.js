@@ -38,6 +38,18 @@ class RandomGenerator {
     }
 }
 
+// Select and copy the contents of |event.target|.
+// |event|: MouseEvent.
+function copyInnerText(event) {
+    document.getSelection().selectAllChildren(event.target);
+    let result = document.execCommand('copy');
+    if (!result) {
+        console.error(`Copy failed: ${result}`);
+        return;
+    }
+    console.log(`Copied: ${event.target.innerText}`);
+}
+
 document.getElementById('btn-generate').addEventListener('click', () => {
     let params = document.getElementById('form-params');
     let length = parseInt(params.length.value, 10);
@@ -52,11 +64,14 @@ document.getElementById('btn-generate').addEventListener('click', () => {
         symbols: symbols
     });
 
+    let out = generator.generate();
+    let out_span = document.createElement('span');
+    out_span.classList.add('password');
+    out_span.innerText = out;
+    out_span.addEventListener('click', copyInnerText);
 
     let out_div = document.createElement('div');
-    out_div.classList.add('password');
-    out_div.innerText = generator.generate();
-
+    out_div.appendChild(out_span);
     let passwords = document.querySelector('.passwords');
     passwords.appendChild(out_div);
 });
