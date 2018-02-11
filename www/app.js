@@ -26,6 +26,7 @@ class RandomGenerator {
 
     generate() {
         if (this._candidates.length === 0) {
+            toastr.warning('No "Type" has been specified.');
             console.error('No type has been specified')
             return '';
         }
@@ -44,9 +45,11 @@ function copyInnerText(event) {
     document.getSelection().selectAllChildren(event.target);
     let result = document.execCommand('copy');
     if (!result) {
+        toastr.warning('Copy failed.');
         console.error(`Copy failed: ${result}`);
         return;
     }
+    toastr.success('Copied to your clipboard.');
     console.log(`Copied: ${event.target.innerText}`);
 }
 
@@ -80,3 +83,24 @@ if ('serviceWorker' in navigator &&
     !navigator.serviceWorker.controller) {
     navigator.serviceWorker.register('sw.js');
 }
+
+addEventListener('load', () => {
+    console.log('loaded.');
+    toastr.options = {
+        "closeButton": true,
+        "debug": true,
+        "newestOnTop": true,
+        "progressBar": false,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "200",
+        "hideDuration": "200",
+        "timeOut": "3000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "swing",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+});
