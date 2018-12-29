@@ -1,4 +1,4 @@
-const VERSION = 7;
+const VERSION = 8;
 const STATIC_CACHE_NAME = 'static_' + VERSION;
 const BASE_URL = location.href.replace(/\/sw\.js$/, '');
 
