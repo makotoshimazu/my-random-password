@@ -8,14 +8,25 @@
   <title>Random password generator</title>
 </head>
 <body>
-  <h1>Random password generator</h1>
-  Generates your random password on your machine.
+  <header language="en">
+    <h1>Random password generator</h1>
+    Generate your random password on your machine by offline. Your password is only on your device, so that it won't be sent to the internet.
+  </header>
+  <header language="ja" class="invisible">
+    <h1>ランダムパスワードジェネレーター - Random password generator</h1>
+    デバイス上でランダムなパスワードを生成します。パスワードを送信しないので安全です。
+  </header>
   <div class="contents">
     <section class="control">
       <h2>Options</h2>
       <form id="form-params">
         <div class="form-group">
-          Length:
+          <span language="en">
+            Length:
+          </span>
+          <span language="ja" class="invisible">
+            長さ:
+          </span>
           <label><input type="radio" name="length" value="4">4</label>
           <label><input type="radio" name="length" value="8">8</label>
           <label><input type="radio" name="length" value="12">12</label>
@@ -24,11 +35,28 @@
           <label><input type="radio" name="length" value="32">32</label>
         </div>
         <div class="from-group">
-          Type:
-          <label><input type="checkbox" name="numbers" value="true" checked> Numbers</label>
-          <label><input type="checkbox" name="lower_alphabets" value="true" checked> Lower alphabets</label>
-          <label><input type="checkbox" name="upper_alphabets" value="true" checked> Upper alphabets</label>
-          <label><input type="checkbox" name="symbols" value="true"> Symbols</label> <input type="text" value="!@#$%,./?{}" id="symbols-to-use" />
+          <span language="en">
+            Type:
+          </span>
+          <span language="ja" class="invisible">
+            文字種:
+          </span>
+          <label><input type="checkbox" name="numbers" value="true" checked>
+            <span language="en">Numbers</span>
+            <span language="ja" class="invisible">数字</span>
+          </label>
+          <label><input type="checkbox" name="lower_alphabets" value="true" checked>
+            <span language="en"> Lower alphabets</span>
+            <span language="ja" class="invisible">小文字</span>
+          </label>
+          <label><input type="checkbox" name="upper_alphabets" value="true" checked>
+            <span language="en">Upper alphabets</span>
+            <span language="ja" class="invisible">大文字</span>
+          </label>
+          <label><input type="checkbox" name="symbols" value="true">
+            <span language="en"> Symbols</span>
+            <span language="ja" class="invisible">記号</span>
+          </label> <input type="text" value="!@#$%,./?{}" id="symbols-to-use" />
         </div>
       </form>
       <div class="generate">
@@ -37,6 +65,10 @@
     </section>
     <section class="passwords">
       <h2>Passwords</h2>
+      <div style="margin-bottom: 4px">
+        <div language="en">Tap/Click the generage password to copy.</div>
+        <div language="ja" class="invisible">タップ/クリックするだけでコピーできます。</div>
+      </div>
     </section>
   </div>
   <script async src="app.js"></script>

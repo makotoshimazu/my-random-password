@@ -1,4 +1,4 @@
-const VERSION = 8;
+const VERSION = 9;
 const STATIC_CACHE_NAME = 'static_' + VERSION;
 const BASE_URL = location.href.replace(/\/sw\.js$/, '');
 
@@ -9,7 +9,8 @@ const STATIC_FILES = [
     BASE_URL + '/favicon.ico',
     'https://code.jquery.com/jquery-3.3.1.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'
+  'https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js',
+  'https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto|Roboto+Mono'
 ];
 
 self.addEventListener('install', e => {

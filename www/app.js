@@ -87,6 +87,34 @@ if ('serviceWorker' in navigator &&
   navigator.serviceWorker.register('sw.js');
 }
 
+function updateLanguage() {
+  const supportedLang = {
+    'ja-JP': 'ja',
+    'ja': 'ja',
+    'en-US': 'en',
+    'en': 'en',
+    'default': 'en'
+  };
+  let currentLang = 'default';
+  if (navigator.languages) {
+    currentLang = navigator.languages[0];
+  } else {
+    currentLang = navigator.language || navigator.userLanguage || 'default';
+  }
+  let langToUse = 'default';
+  if (currentLang in supportedLang) {
+    langToUse = supportedLang[currentLang];
+  }
+
+  document.querySelectorAll(`[language]`).forEach(node => {
+    if (node.getAttribute('language') === langToUse) {
+      node.classList.remove('invisible');
+    } else {
+      node.classList.add('invisible');
+    }
+  });
+}
+
 addEventListener('load', () => {
   console.log('loaded.');
   toastr.options = {
@@ -106,4 +134,5 @@ addEventListener('load', () => {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
   }
+  updateLanguage();
 });
